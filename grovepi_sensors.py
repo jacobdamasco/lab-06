@@ -15,7 +15,11 @@ if __name__ == "__main__":
     grovepi.pinMode(potentiometer, "INPUT")
     grovepi.pinMode(sensor, "OUTPUT") 
 
-    setRGB(0, 255, 0)
+    output = ""
+    red = 0
+    green = 0
+    setText(output)
+    setRGB(red, green, 0)
     
     while True:
         try:
@@ -29,10 +33,12 @@ if __name__ == "__main__":
             # check object is less than threshold
             if (dist_sensor <= threshold):
                 output = str(threshold) + " OBJ PRES\n" + str(dist_sensor)
-                setText(output)
+                red = 255
+                green = 0
             else:
                 output = str(threshold) + '\n' + str(dist_sensor)
-                setText(output)
+                red = 0
+                green = 255
         except:
             print("Error executing")
 
