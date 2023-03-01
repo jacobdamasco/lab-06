@@ -19,27 +19,20 @@ if __name__ == "__main__":
     
     while True:
         try:
+            # threshold and dist_sensor are both ints
             # set threshold distance (rotary angle sensor)
             threshold = grovepi.analogRead(potentiometer)
             
             # measure distance (ultrasonic ranger)
             dist_sensor = grovepi.ultrasonicRead(sensor)
 
-
-            print("Threshold reading: ", threshold)
-            print("Sensor reading: ", dist_sensor)
-
-            # checking the types of threshold and dist sensor
-            print("Threshold type: ", type(threshold))
-            print("Sensor type: ", type(dist_sensor))
-
             # check object is less than threshold
-            # if (dist_sensor <= threshold):
-            #     output = threshold + " OBJ PRES\n" + dist_sensor
-            #     setText(output)
-            # else:
-            #     output = threshold + '\n' + dist_sensor
-            #     setText(output)
+            if (dist_sensor <= threshold):
+                output = threshold + " OBJ PRES\n" + dist_sensor
+                setText(output)
+            else:
+                output = threshold + '\n' + dist_sensor
+                setText(output)
         except:
             print("Error executing")
 
