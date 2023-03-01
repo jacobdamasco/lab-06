@@ -19,7 +19,7 @@ if __name__ == "__main__":
     red = 0
     green = 0
     setText(output)
-    setRGB(red, green, 0)
+    setRGB(0, 255, 0)
     
     while True:
         try:
@@ -33,12 +33,8 @@ if __name__ == "__main__":
             # check object is less than threshold
             if (dist_sensor <= threshold):
                 output = str(threshold) + " OBJ PRES\n" + str(dist_sensor)
-                red = 255
-                green = 0
             else:
                 output = str(threshold) + '\n' + str(dist_sensor)
-                red = 0
-                green = 255
         except:
             print("Error executing")
 
