@@ -36,3 +36,4 @@ if __name__ == "__main__":
                 setText(output)
         except:
             print("Error executing")
+        time.sleep(1)
