@@ -29,10 +29,10 @@ if __name__ == "__main__":
 
             # check object is less than threshold
             if (dist_sensor <= threshold):
-                output = str(threshold) + "cm OBJ PRES\n" + str(dist_sensor)
+                output = str(threshold) + "cm OBJ PRES\n" + str(dist_sensor) + "cm"
                 setText_norefresh(output)
             else:
-                output = str(threshold) + 'cm\n' + str(dist_sensor)
+                output = str(threshold) + 'cm           \n' + str(dist_sensor) + "cm"
                 setText_norefresh(output)
         except:
             print("Error executing")
